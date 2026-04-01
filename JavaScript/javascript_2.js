@@ -90,7 +90,7 @@ console.log(rez)
 */
 
 // 4.
-
+/*
 const trgovina = [
     {
         "trgovina": "konzum",
@@ -118,10 +118,41 @@ const trgovina = [
     }
 ]
 
-const rez = trgovina.map(da)
-
-function da(trgovina){
-    return trgovina.trgovina
-}
+const rez = trgovina.map((trgovina) => trgovina.trgovina)
 
 console.log(rez)
+*/
+
+// 5.
+/*
+// (A)
+const unos = Number(prompt("Unesite broj: "))
+const isEven = (broj) => broj % 2 === 0
+if(unos === 0){
+    console.log("Unesite paran ili neparan broj ne nula!")
+} else if(isEven(unos)){
+    console.log(true)
+} else{
+    console.log(false)
+}
+
+// (B)
+if(unos === 0){
+    console.log("Unesite paran ili neparan broj ne nula! (Drugi zadatak)")
+} else if(isEven(unos)){
+    console.log("Pozitivan")
+} else{
+    console.log("Negativan")
+}
+
+// (C)
+const kub = (broj) => broj * broj * broj
+
+console.log(`Kub od broja ${unos} je ${kub(unos)}`)
+
+// (D)
+
+const hello = () => console.log("Hello world!!!")
+
+hello()
+*/
