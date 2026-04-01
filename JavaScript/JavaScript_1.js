@@ -57,8 +57,9 @@ sou()
 */
 
 // 3.
+/*
 let unos = prompt("Unesite broj(10 znamenki): ")
-console.log(unos)
+
 if (isNaN(unos)){
     console.log("Greska unos nije broj!!!")
 } else if (unos.length !== 10){
@@ -67,4 +68,78 @@ if (isNaN(unos)){
     rez = unos[0]
     console.log(`Prva znamenka je: ${rez}`)
 }
+*/
 
+
+// 4.
+/*
+const unos = Number(prompt("Unesite mjesec(1-12): "))
+
+switch(unos){
+    case 1:
+        doba = "Zima"
+        console.log(doba)
+        break
+    case 2:
+        doba = "Zima"
+        console.log(doba)
+        break
+    case 3:
+        doba = "Zima"
+        console.log(doba)
+        break
+    case 4:
+        doba = "Proljece"
+        console.log(doba)
+        break
+    case 5:
+        doba = "Proljece"
+        console.log(doba)
+        break
+    case 6:
+        doba = "Proljece"
+        console.log(doba)
+        break
+    case 7:
+        doba = "Ljeto"
+        console.log(doba)
+        break
+    case 8:
+        doba = "Ljeto"
+        console.log(doba)
+        break
+    case 9:
+        doba = "Ljeto"
+        console.log(doba)
+        break
+    case 10:
+        doba = "Jesen"
+        console.log(doba)
+        break
+    case 11:
+        doba = "Jesen"
+        console.log(doba)
+        break
+    case 12:
+        doba = "Jesen"
+        console.log(doba)
+        break
+    default:
+        console.log("Krivi unos, morate unijeti broj izmedu 1 i 12.")
+    }
+*/
+
+// 5.
+/*
+const unos = prompt("Unesite broj: ")
+const broj = prompt("Unesite koja ponavljanja trazimo: ")
+let brojac = 0
+
+for (let i = 0; i < unos.length; i++){
+    if(unos[i] === broj){
+        brojac++
+        console.log(brojac)
+    }
+}
+console.log(`U broju ${unos} imamo ${brojac} pojavljivanja broja ${broj}`)
+*/
