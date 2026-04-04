@@ -104,6 +104,106 @@ do{
 // Napisati currying funkciju koja množi brojeve sa zadnjom parnom znamenkom.
 // Za funkciju s pozivom mnozi(2)(5)(13)(10)(14)(177)(4)(0)() ispisuje se rezultat
 // 1120.
+/*
+function mnozi(x) {
+    let rez = 1
+
+    function next(y) {
+        if (y === undefined) {
+            return rez
+        }
+
+        if (y % 10 % 2 === 0 && y !== 0) {
+            rez *= y
+        }
+
+        return next
+    }
+    return next(x)
+}
+
+let trenutna = null
+
+do {
+    unos = prompt("Unesite broj: ")
+
+    if(unos === "" || unos === null) {
+        console.log("Rezultat: " + trenutna())
+        break
+    }
+
+    let broj = Number(unos)
+
+    if(trenutna === null){
+        trenutna = mnozi(broj)
+    } else {
+        trenutna = trenutna(broj)
+    }
+
+} while(true)
+*/
+
+// ____________________-Zadaci – objektno orijentirani JS-_______________________________________
+
+// 4.
+
+// Kreiraj konstruktor Kolegij s atributima (property)
+// godina, semestar, kol1,
+// kol2, ocjena_rez i dvije metode ocjena() i info().
+// Funkcija ocjena() ispisuje postotak riješenosti => kol1*0.5 + kol2*0.5.
+// Funkcija info() ispisuje poruku „Student na predmetu
+// PWKS, {godina}. godina,
+// {semestar}. semestar, ostvario je {ocjena_rez}%“.
+// Kreirati dva objekta i postaviti vrijednosti pomoću
+// konstruktora. Pozvati
+// funkcije ocjena() i info() u oba objekta
+
+function Kolegij(predmet, godina, semestar, kol1, kol2) {
+    this.predmet = predmet
+    this.godina = godina
+    this.semestar = semestar
+    this.kol1 = kol1
+    this.kol2 = kol2
+    this.ocjena_rez = 0
+
+    this.ocjena = function() {
+        this.ocjena_rez = this.kol1 * 0.5 + this.kol2 * 0.5
+    }
+
+    this.info = function() {
+        console.log(`Student na predmetu ${this.predmet}, ${this.godina}. godina, ${this.semestar}. semestar, ostvario je ${this.ocjena_rez.toFixed(2)}%`)
+    }
+
+    this.infoStudent = function() {
+        console.log(`Student ${this.ime} ${this.prezime} ima ${this.ocjena_rez.toFixed(2)}%`)
+    }
+}
+
+let k1 = new Kolegij("PWKS", 2, 1, 80, 70)
+
+k1.ocjena()
+k1.info()
+
+// 5.
+
+// U prethodnom zadatku drugo kreiranom objektu dodati atribut ime, prezime i
+// status. Ispisati poruku „Student {ime} {prezime} ima {formula}%“
+
+let k2 = new Kolegij("Digitalni sustavi", 2, 1, 80, 70)
 
 
+k2.ime = "Duje"
+k2.prezime = "Mihaljević"
+k2.status = "redovni"
+k2.ocjena()
+k2.infoStudent()
 
+// 6.
+
+// U prethodnom zadatku izbriši dodane atribute ime, prezime i status
+
+delete k2.ime
+delete k2.prezime
+delete k2.status
+
+k2.infoStudent()
