@@ -69,13 +69,13 @@ for(let i = 0; i < arr.length; i++){
         console.log(arr[i])
     }
 }
-*/
+
 
 // Zdk 1.
 // Napiši regularni izraz kojim ćeš ispitati datum formata dd.dd.dddd.
 
-/*
-const date = "20-01.2000."
+
+const date = "20-12.2000."
 const regex = /\d{2}\-\d{2}\.\d{4}\./
 
 if (date.match(regex)){
@@ -83,4 +83,71 @@ if (date.match(regex)){
 } else {
     console.log("Ne ispravno")
 }
+
+// Zdk 2.
+
+// Napiši regularni izraz koji provjerava završava li email adresa sa riječi
+// „com“.
+
+const email = "1233@gmail.com"
+const regex = /\.com/
+
+if (email.match(regex)) {
+    console.log("Ima .com")
+} else {
+    console.log("Nema .com")
+}
+
+
+// Zdk 3.
+// Napiši regularni izraz koji provjerava počinje
+// li rečenica velikim slovom
+
+const sentence = "Zvo je recenica za provjeru!"
+
+const regex = /^[A-Z]/
+
+console.log(regex.test(sentence))
+
+
+// Zdk 4.
+// Napiši regularni izraz koji provjerava
+// sadrži li rečenica riječ „Split“
+
+const sentence = "Ova recencica ima u Split"
+const regex = /Split$/
+
+if (sentence.match(regex)) {
+    console.log("Ima Split u sebi.")
+} else {
+    console.log("Nema Split u sebi.")
+}
+
+
+// Zdk. 5.
+// Napiši regularni izraz koji provjerava
+// ima li rečenica slova „x,y“ ili
+// brojeve 1,2,3.
+
+const regex = /[123xy]/gi
+
+console.log(regex.test("Ova recenica sadrzi 1"))
+
+
+// Zdk 6.
+// Napiši regularni izraz koji provjerava
+// završava li rečenica znakom“!“
+
+const regex = /!$/
+
+console.log(regex.test("ovo ima !"))
+
+
+// Zdk 8.
+// Provjeri sadrži li dani izraz riječ
+// „KOP-“ i troznamenkasti broj učionice.
+
+const regex = /KOP.\d{3}/gi
+
+console.log(regex.test("Ovo ima KOP-123"))
 */
