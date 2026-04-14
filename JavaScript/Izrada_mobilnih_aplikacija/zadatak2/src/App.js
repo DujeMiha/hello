@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import useDropdown from "./useDropdown";
+import ProizvodiList from "./ProizvodiList";
 
 const data = {
   "Tamna čokolada": [
@@ -17,39 +18,67 @@ const data = {
   "Bijela čokolada": [
     "Bijela klasična",
     "Bijela s vanilijom",
-    "Bijela s kokosом",
-    "Bijela s jagodом",
+    "Bijela s kokosom",
+    "Bijela s jagodom",
   ],
-  "Čokolada s dodacima": [
-    "S grožđicama",
-    "S brusnicama",
-    "S pistacijama",
-    "S quinoom",
-  ],
+  "Čokolada s dodacima": ["S grožđicama", "S brusnicama", "S pistacijama"],
 };
+
+const proizvodi = [
+  {
+    naziv: "Tamna 70% Premium",
+    podkategorija: "Tamna 70%",
+  },
+  {
+    naziv: "Mliječna Lješnjak",
+    podkategorija: "Mliječna s lješnjakom",
+  },
+  {
+    naziv: "Bijela Vanilla",
+    podkategorija: "Bijela s vanilijom",
+  },
+  {
+    naziv: "Čokolada s brusnicama",
+    podkategorija: "S brusnicama",
+  },
+];
 
 function App() {
   const [vrsta, setVrsta, VrstaDropdown] = useDropdown(Object.keys(data));
   const [podvrsta, setPodvrsta, PodvrstaDropdown] = useDropdown(data[vrsta]);
 
+  const [filtriraniProizvodi, setFiltriraniProizvodi] = useState([]);
+
   useEffect(() => {
-    setPodvrsta(data[vrsta][0]);
+    if (data[vrsta]) {
+      setPodvrsta(data[vrsta][0]);
+    }
   }, [vrsta]);
+
+  useEffect(() => {
+    const filtrirano = proizvodi.filter((p) => p.podkategorija === podvrsta);
+    setFiltriraniProizvodi(filtrirano);
+  }, [podvrsta]);
 
   return (
     <div>
       <h1>Kraft Čokolaterija</h1>
+
       <div>
         <label>Vrsta</label>
         <VrstaDropdown />
       </div>
+
       <div>
         <label>Podvrsta</label>
         <PodvrstaDropdown />
       </div>
+
       <p>
         Odabrali ste: {vrsta} - {podvrsta}
       </p>
+
+      <ProizvodiList proizvodi={filtriraniProizvodi} />
     </div>
   );
 }
