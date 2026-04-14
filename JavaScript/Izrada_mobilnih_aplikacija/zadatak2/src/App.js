@@ -26,12 +26,12 @@ const data = {
 
 const proizvodi = [
   {
-    naziv: "Tamna 70% Premium",
+    naziv: "Tamna 70% premium",
     podkategorija: "Tamna 70%",
   },
   {
-    naziv: "Mliječna Lješnjak",
-    podkategorija: "Mliječna s lješnjakom",
+    naziv: "Tamna 70% dubai",
+    podkategorija: "Tamna 70%",
   },
   {
     naziv: "Bijela Vanilla",
@@ -62,8 +62,6 @@ function App() {
 
   return (
     <div>
-      <h1>Kraft Čokolaterija</h1>
-
       <div>
         <label>Vrsta</label>
         <VrstaDropdown />
@@ -73,10 +71,6 @@ function App() {
         <label>Podvrsta</label>
         <PodvrstaDropdown />
       </div>
-
-      <p>
-        Odabrali ste: {vrsta} - {podvrsta}
-      </p>
 
       <ProizvodiList proizvodi={filtriraniProizvodi} />
     </div>
