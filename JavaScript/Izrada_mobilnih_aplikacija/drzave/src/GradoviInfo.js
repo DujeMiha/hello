@@ -1,22 +1,22 @@
 import React from "react";
 
-function GradoviInfo({ drzava, grad, znamenitosti }) {
-  if (!znamenitosti)
+function GradoviInfo({ grad, znamenitosti }) {
+  if (!znamenitosti) {
     return (
       <div>
-        <h3>
-          Znamenitosti grada {grad}-a u drzavi {drzava}:
-        </h3>
-        <p>Nema ih.</p>
+        <h3>Znamenitosti:</h3>
+        <p>Nema ih!!!</p>
       </div>
     );
+  }
+
   return (
     <div>
-      <h3>Znamenitosti grada {grad}-a: </h3>
+      <h3>Znamenitosti grada {grad}:</h3>
       <ul>
         {znamenitosti.map((z) => (
           <li key={z.naziv}>
-            {z.naziv} --- {z.opis}
+            <strong>{z.naziv}</strong> — {z.opis}
           </li>
         ))}
       </ul>

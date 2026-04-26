@@ -1,6 +1,6 @@
+import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import React from "react";
 import useDropdown from "./useDropdown";
 import VozacInfo from "./VozacInfo";
 
@@ -35,31 +35,27 @@ const vozaciDetalji = {
 };
 
 function App() {
-  const [tim, timDropdown] = useDropdown(Object.keys(data));
+  const [tim, timDropdown, setTim] = useDropdown(Object.keys(data));
   const [vozac, vozacDropdown, setVozac] = useDropdown(data[tim]);
-  const [rezultati, setRezultati] = useState(vozaciDetalji[vozac]);
+  const [podaci, setPodaci] = useState(vozaciDetalji[vozac]);
 
   useEffect(() => {
     setVozac(data[tim][0]);
   }, [tim]);
 
   useEffect(() => {
-    setRezultati(vozaciDetalji[vozac]);
+    setPodaci(vozaciDetalji[vozac]);
   }, [vozac]);
 
   return (
     <div>
-      <h1>Odaberi tim: </h1>
+      <h1>Odaberi ekipu</h1>
       {timDropdown}
-      <h2>Odaberi vozaca: </h2>
+
+      <h2>Odaberi vozaca</h2>
       {vozacDropdown}
 
-      <p>
-        Odabrali ste tim <strong>{tim}</strong> i vozaca tog tima
-        <strong>{vozac}</strong>
-      </p>
-
-      <VozacInfo vozac={vozac} rezultati={rezultati} />
+      <VozacInfo vozac={vozac} podaci={podaci} />
     </div>
   );
 }

@@ -1,10 +1,10 @@
 import React from "react";
 
-function VozacInfo({ vozac, podaci }) {
+function IgraciDetalji({ igrac, podaci }) {
   if (!podaci) {
     return (
       <div>
-        <h2>Podaci o vozacu: </h2>
+        <h3>Podaci o igracu: </h3>
         <p>Nema ih!!!</p>
       </div>
     );
@@ -13,13 +13,12 @@ function VozacInfo({ vozac, podaci }) {
     <div>
       <ul>
         {podaci.map((p) => (
-          <li key={p.utrka}>
-            {p.utrka} - - - {p.pozicija}
+          <li key={p.naziv}>
+            {p.naziv} - - - {p.opis}
           </li>
         ))}
       </ul>
     </div>
   );
 }
-
-export default VozacInfo;
+export default IgraciDetalji;

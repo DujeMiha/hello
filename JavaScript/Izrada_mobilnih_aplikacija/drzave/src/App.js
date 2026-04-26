@@ -32,30 +32,32 @@ const gradoviDetalji = {
 };
 
 function App() {
-  const [drzava, drzavaDropdown] = useDropdown(Object.keys(data));
+  const [drzava, drzavaDropdown, setDrzava] = useDropdown(Object.keys(data));
   const [grad, gradDropdown, setGrad] = useDropdown(data[drzava]);
-  const [znamenitost, setZnamenitost] = useState(gradoviDetalji[grad]);
+  const [znamenitosti, setZnamenitosti] = useState(gradoviDetalji[grad]);
 
   useEffect(() => {
     setGrad(data[drzava][0]);
   }, [drzava]);
+
   useEffect(() => {
-    setZnamenitost(gradoviDetalji[grad]);
-  });
+    setZnamenitosti(gradoviDetalji[grad]);
+  }, [grad]);
 
   return (
     <div>
-      <h1>Odaberi drzavu:</h1>
+      <h1>Odaberi drzavu: </h1>
       {drzavaDropdown}
 
-      <h1>Odaberi grad:</h1>
+      <h2>Odaberi grad: </h2>
       {gradDropdown}
 
       <p>
-        Odabrao si: <strong>{grad}</strong>, <strong>{drzava}</strong>
+        Odabrali ste grad <strong>{grad}</strong> iz{" "}
+        <strong>{drzava}</strong>{" "}
       </p>
 
-      <GradoviInfo drzava={drzava} grad={grad} znamenitosti={znamenitost} />
+      <GradoviInfo grad={grad} znamenitosti={znamenitosti} />
     </div>
   );
 }

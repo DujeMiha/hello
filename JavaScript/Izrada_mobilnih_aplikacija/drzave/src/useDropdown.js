@@ -1,4 +1,5 @@
 import { useState } from "react";
+import React from "react";
 
 function useDropdown(opcije) {
   const [state, setState] = useState(opcije[0]);
@@ -6,7 +7,7 @@ function useDropdown(opcije) {
   const dropdown = (
     <select value={state} onChange={(e) => setState(e.target.value)}>
       {opcije.map((o) => (
-        <option key={o} value={o}>
+        <option value={o} key={o}>
           {o}
         </option>
       ))}
