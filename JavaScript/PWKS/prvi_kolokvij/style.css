@@ -1,0 +1,141 @@
+body,
+html {
+  background-color: rgb(217, 217, 217);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+}
+
+/*------------HEADER PICTURE AND TEXT-------------*/
+#header {
+  position: relative;
+  background-image: url("headerIMG.jpg");
+  background-size: 100%;
+  background-position: center;
+  height: 600px;
+  margin-bottom: 5px;
+}
+
+.center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.center-text p {
+  text-align: center;
+  font-size: 3em;
+  color: white;
+  font-family: Oswald;
+}
+/* -----------NAVBAR-------------*/
+nav {
+  position: relative;
+  align-items: stretch;
+  background-color: #a59c9a;
+  padding: 20px;
+}
+
+nav a {
+  margin-left: 20px;
+  color: rgb(245, 239, 238);
+  font-size: 18px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: purple;
+}
+
+nav a:active {
+  color: red;
+}
+
+/*-------------------LEFT RIGHT DIV-----------------*/
+
+main {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.right {
+  margin-left: 5px;
+  text-align: center;
+  flex: 1;
+  padding-top: 20px;
+  border: black solid 1px;
+}
+
+.right img {
+  width: auto;
+  height: 300px;
+}
+
+.left {
+  flex: 1;
+  border: black solid 1px;
+  text-align: justify;
+}
+
+/*--------------FOOTER---------------------*/
+
+footer {
+  position: relative;
+  align-items: stretch;
+  background-color: #a59c9a;
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  color: rgb(245, 239, 238);
+  margin-top: 5px;
+}
+
+/*-----------------p, ul ,il----------------*/
+
+p,
+ol,
+li {
+  color: black;
+  font-family: Oswald;
+  font-size: 18px;
+  padding-right: 15px;
+  margin-left: 15px;
+}
+
+h1 {
+  color: black;
+  font-family: Oswald;
+  font-size: 40px;
+  padding-left: 15px;
+}
+h2 {
+  color: black;
+  font-family: Oswald;
+  font-size: 32px;
+  padding-left: 15px;
+}
+
+h2 {
+  color: black;
+  font-family: Oswald;
+  padding-top: 5px;
+}
+
+/*------------------PROIZVODI-------------------------*/
+
+article {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+.texts {
+  padding-left: 20px;
+  font-family: Oswald;
+  font-size: 18px;
+}
+
+.images img {
+  width: 250px;
+  height: auto;
+}
