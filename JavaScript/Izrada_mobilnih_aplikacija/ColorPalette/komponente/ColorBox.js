@@ -17,7 +17,6 @@ const ColorBox = ({ colorName, hexCode }) => {
         marginBottom: 5,
         marginLeft: 20,
         justifyContent: "flex-end",
-        alignContent: "flex-start",
       }}
     >
       <Text style={textStyle}>{colorName}</Text>
